@@ -1,0 +1,345 @@
+.project {
+  position: relative;
+  min-height: 2500px;
+  padding-top: 150px;
+  padding-bottom: 150px;
+
+  @include tablet {
+    min-height: 2000px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+  }
+  @include small-tablet {
+    min-height: 1000px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+  }
+  @include mobile {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1110px;
+    height: 1px;
+    background-color: rgba(33, 56, 66, 0.1);
+  }
+
+  &__mb100 {
+    margin-bottom: 100px;
+
+    @include small-tablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__item {
+    position: absolute;
+    width: 735px;
+    height: 550px;
+    &--left {
+      left: 0;
+      @include big-desktop {
+        z-index: -100;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &--right {
+      right: 0;
+
+      @include big-desktop {
+        z-index: -100;
+        right: 50%;
+        transform: translateX(50%);
+      }
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+
+  &__img {
+    position: absolute;
+    z-index: -10;
+    width: 100%;
+    height: 100%;
+    top: 0;
+
+    &--left {
+      left: 0;
+
+    }
+
+    &--right {
+      right: 0;
+    }
+    @include small-tablet {
+      width: 100%;
+      height: 98% ;
+    }
+  }
+
+
+
+  &__title {
+    margin: 0;
+    grid-column: 4 span;
+    color: var(--second-color);
+    font-family: var(--font-family);
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 54px;
+
+    @include tablet {
+      grid-column: 6 span;
+    }
+
+    @include small-tablet {
+      grid-column: 4 span;
+      justify-items: center;
+      align-items: center;
+    }
+    @include mobile {
+      font-size: 27px;
+      line-height: 35px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    padding-top: 12px;
+    grid-column: 6 span;
+    padding-left: 80px;
+    color: var(--main-color);
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+
+    @include small-tablet {
+      grid-column: 4 span;
+      justify-items: center;
+      align-items: center;
+      padding-left: 0;
+    }
+  }
+
+  &__wrapper {
+    min-height: 615px;
+    margin-bottom: 100px;
+    position: relative;
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+    @include tablet {
+      min-height: 550px;
+    }
+    @include mobile {
+      min-height: 400px;
+    }
+
+
+    &--mb0 {
+      margin-bottom: 0;
+    }
+  }
+
+  &__content {
+    padding-top: 80px;
+    padding-bottom: 140px;
+
+    @include tablet {
+      padding-top: 40px;
+    }
+    @include small-tablet {
+      padding-bottom: 50px;
+    }
+    @include mobile {
+      padding-bottom: 20px;
+    }
+
+    &--right {
+      grid-column: 8/12;
+
+      @include big-desktop {
+        grid-column: 3/7;
+      }
+
+      @include tablet {
+        grid-column: 3/9;
+      }
+
+      @include small-tablet {
+        grid-column: 2 span;
+      }
+      @include mobile {
+        grid-column: 4 span;
+      }
+    }
+
+    &--left {
+      grid-column: 5 span;
+
+      @include big-desktop {
+        grid-column: 3/7;
+      }
+
+      @include tablet {
+        grid-column: 3/9;
+      }
+
+      @include small-tablet {
+        grid-column: 2 span;
+      }
+      @include mobile {
+        grid-column: 4 span;
+      }
+    }
+  }
+
+  &__block {
+    flex-direction: column;
+  }
+
+  &__subtitle {
+    margin: 0;
+    margin-bottom: 24px;
+    color: rgb(77, 83, 60);
+    font-family: var(--font-family);
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 48px;
+    @include mobile {
+      font-size: 25px;
+      line-height: 35px;
+    }
+  }
+
+  &__descr {
+    margin-bottom: 90px;
+    color: rgba(33, 56, 66, 0.6);
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+
+    @include tablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__link {
+    color: rgb(212, 214, 212);
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 0px;
+    text-decoration-line: underline;
+    transition: color 0.3s ease-in-out;
+
+    &:focus {
+      outline: none;
+    }
+
+    @include hover {
+      color: var(--active-color);
+      text-decoration-line: none;
+    }
+
+    &:active {
+      color: var(--accent-color);
+    }
+
+    @include big-desktop {
+      color: var(--active-color);
+    }
+  }
+
+  &-table {
+    z-index: 100;
+    position: absolute;
+    bottom: 0;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    padding: 30px 33px 29px 30px;
+    width: 453px;
+    height: 243px;
+    border-radius: 8px;
+    box-shadow: 50px 50px 100px 0px rgba(0, 0, 0, 0.15);
+    background: rgb(255, 255, 255);
+
+    &--left {
+      left: -30px;
+      bottom: -60px;
+
+      @include big-desktop {
+        left: auto;
+        right: -30px;
+      }
+
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &--right {
+      right: -30px;
+      bottom: -60px;
+
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &__block {
+      padding-left: 60px;
+    }
+
+    &__title {
+      margin: 0;
+      margin-bottom: 4px;
+      color: rgb(77, 83, 60);
+      font-family: var(--font-family);
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+    }
+
+    &__subtitle {
+      margin: 0;
+      color: rgb(21, 41, 52);
+      font-family: var(--font-family);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 21px;
+      letter-spacing: 0px;
+    }
+
+    &__text {
+      margin-bottom: 24px;
+      color: rgb(77, 83, 60);
+      font-family: var(--font-family);
+      font-style: italic;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 26px;
+    }
+  }
+}
+
+.project__link.focus-visible {
+  outline: 1px solid var(--accent-color);
+  text-decoration: none;
+}
